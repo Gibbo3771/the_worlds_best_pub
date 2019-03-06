@@ -1,12 +1,10 @@
 class Drink
 
+    attr_reader :name
+    attr_accessor :price
     def initialize(name, price)
         @name = name
         @price = price
-    end
-
-    def get_name()
-        return @name
     end
 
 end
