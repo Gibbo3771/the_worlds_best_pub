@@ -9,6 +9,12 @@ class Pub
 
   end
 
+  def get_drink_by_type(type)
+    @drinks.each do |drink|
+      return drink if drink.name == type
+    end
+  end
+
   def stock_count
     return @drinks.length
   end
@@ -17,7 +23,13 @@ class Pub
     return @till
   end
 
-  def sell_drink(drink)
+  def remove_drink_from_stock(drink)
+    return @drinks.delete(drink)
+  end
 
+  def sell_drink(type)
+    drink = get_drink_by_type(type)
+    @till += drink.price
+    return remove_drink_from_stock(drink)
   end
 end
