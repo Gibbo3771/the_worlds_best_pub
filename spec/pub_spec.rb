@@ -6,10 +6,13 @@ require_relative('../drink')
 class PubTest < MiniTest::Test
 
   def setup()
-    @whisky = Drink.new("Whisky", 5)
-    @beer = Drink.new("Whisky", 3)
-    @coke = Drink.new("Whisky", 2)
-    @pub = Pub.new("Queen Vic", @whisky, @beer, @coke)
+    @drinks = []
+    10.times do
+      @drinks.push(Drink.new("Whisky", 5))
+      @drinks.push(Drink.new("Beer", 3))
+      @drinks.push(Drink.new("Coke", 2))
+    end
+    @pub = Pub.new("Queen Vic", *@drinks)
   end
 
   def test_get_pub_name
@@ -17,6 +20,7 @@ class PubTest < MiniTest::Test
   end
 
   def test_get_pub_stock
-    assert_equal([@whisky, @beer, @coke], @pub.drinks)
+    assert_equal(@drinks, @pub.drinks)
   end
+
 end
