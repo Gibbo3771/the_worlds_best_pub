@@ -9,12 +9,12 @@ class CustomerTest < MiniTest::Test
     @customer2 = Customer.new("Sonia", 17, 20)
   end
 
-  def test_customer_name
+  def test_get_customer_name
     assert_equal("Phil Mitchell", @customer1.name)
     assert_equal("Sonia", @customer2.name)
   end
 
-  def test_customer_age
+  def test_get_customer_age
     assert_equal(30, @customer1.age)
     assert_equal(17, @customer2.age)
   end
