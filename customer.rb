@@ -13,4 +13,12 @@ class Customer
     return @wallet
   end
 
+  def pay_for_drink(drink)
+
+  end
+
+  def buy_drink(drink)
+    #
+  end
+
 end
