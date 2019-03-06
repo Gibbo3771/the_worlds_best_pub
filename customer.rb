@@ -18,12 +18,6 @@ class Customer
     @drunkness += drink.strength
   end
 
-  # def sell_drink(drink)
-  #   @till += drink.price
-  #   remove_drink_from_stock(drink)
-  # => return drink
-  # end
-
   def buy_drink(drink)
     drink = @pub.sell_drink
     @customer.pay_for_drink(drink)

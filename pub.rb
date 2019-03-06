@@ -27,6 +27,13 @@ class Pub
     return @drinks.delete(drink)
   end
 
+  def check_if_customer_is_of_age(customer_age)
+    if customer_age > 18
+      return true
+    end
+    return false
+  end
+
   def sell_drink(type)
     drink = get_drink_by_type(type)
     @till += drink.price
